@@ -1,0 +1,6 @@
+type: agentic_dagster_demo.components.ai_workflow_generator.AiWorkflowGenerator
+
+attributes:
+  demo_mode: true
+  github_repo: "customer-org/agentic-dagster-demo"
+  git_branch: "main"

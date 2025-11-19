@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw data ingested from operational systems
+    tables:
+      - name: ai_agent_requests
+        description: Individual AI agent API requests and their metadata
+        columns:
+          - name: request_id
+            description: Unique identifier for each AI agent request
+          - name: agent_name
+            description: Name of the AI agent (e.g., Claude, GPT-4)
+          - name: request_type
+            description: Type of request (code_generation, workflow_creation, analysis)
+          - name: input_tokens
+            description: Number of input tokens used
+          - name: output_tokens
+            description: Number of output tokens generated
+          - name: execution_time_ms
+            description: Execution time in milliseconds
+          - name: status
+            description: Request status (SUCCESS, FAILED, TIMEOUT)
+          - name: created_at
+            description: Timestamp when request was created
+          - name: workflow_id
+            description: Associated workflow ID
+
+      - name: workflows
+        description: Dagster workflow execution metadata
+        columns:
+          - name: workflow_id
+            description: Unique identifier for each workflow execution
+          - name: workflow_name
+            description: Name of the workflow
+          - name: trigger_type
+            description: How workflow was triggered (git_push, schedule, manual, agent_generated)
+          - name: status
+            description: Workflow status (RUNNING, SUCCESS, FAILED)
+          - name: started_at
+            description: Workflow start timestamp
+          - name: completed_at
+            description: Workflow completion timestamp
+          - name: git_commit_sha
+            description: Git commit that triggered the workflow
+          - name: created_by
+            description: User or agent that created the workflow
