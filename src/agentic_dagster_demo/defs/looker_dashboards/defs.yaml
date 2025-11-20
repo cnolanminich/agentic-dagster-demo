@@ -1,0 +1,10 @@
+type: agentic_dagster_demo.defs.looker_dashboards.component.CustomLookerComponent
+
+attributes:
+  # Note: demo_mode defaults to True in the Python class
+  # Dummy Looker credentials to satisfy parent class schema
+  # These are ignored when demo_mode is true
+  looker_resource:
+    base_url: "https://demo.looker.com"
+    client_id: "demo_client_id"
+    client_secret: "demo_client_secret"
