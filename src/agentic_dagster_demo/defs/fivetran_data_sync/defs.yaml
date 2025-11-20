@@ -1,0 +1,14 @@
+# Fivetran Data Sync Component
+# Syncs raw data from operational databases
+# These tables feed into the dbt analytics models
+
+type: agentic_dagster_demo.components.FivetranSyncComponent
+attributes:
+  asset_key_prefix: "fivetran"
+  description: "Fivetran sync from operational database"
+  source_schema: "raw"
+  tables:
+    - "ai_agent_requests"
+    - "workflows"
+  demo_mode: true
+  deps: []
