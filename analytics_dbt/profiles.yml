@@ -2,6 +2,10 @@ analytics_dbt:
   target: dev
   outputs:
     dev:
+      type: duckdb
+      path: 'target/analytics.duckdb'
+      threads: 4
+    prod:
       type: snowflake
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       user: "{{ env_var('SNOWFLAKE_USER') }}"
