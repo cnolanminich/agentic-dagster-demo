@@ -1,0 +1,4 @@
+type: agentic_dagster_demo.defs.looker_dashboards.component.CustomLookerComponent
+
+attributes:
+  demo_mode: true
